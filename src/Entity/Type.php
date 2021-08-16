@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=TypeRepository::class)
  * @ApiResource(
- * normalizationContext={"group"={"read:type"}},
+ * normalizationContext={"groups"={"read:type"}},
  * collectionOperations={"get"},
  * itemOperations={"get"})
  */
@@ -23,6 +23,7 @@ class Type
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"read:type"})
      */
     private $id;
 

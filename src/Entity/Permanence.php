@@ -11,10 +11,9 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=PermanenceRepository::class)
  * @ApiResource(
- * normalizationContext={"group"={"read:permanence"}},
+ * normalizationContext={"groups"={"read:permanence","read:evenement","read:type"}},
  * collectionOperations={"get"},
  * itemOperations={"get"})
-
  */
 class Permanence
 {
@@ -22,28 +21,31 @@ class Permanence
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"read:permanence"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="integer")
-     * @group({"read:permanence"})
+     * @Groups({"read:permanence"})
      */
     private $semaine;
 
     /**
      * @ORM\Column(type="date_immutable")     * 
-     * @group({"read:permanence"})
+     * @Groups({"read:permanence"})
      */
     private $date;
 
     /**
      * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="Permanences")
+     * @Groups({"read:permanence"})
      */
     private $Type;
 
     /**
      * @ORM\ManyToOne(targetEntity=Evenement::class, inversedBy="Permanences")
+     * @Groups({"read:permanence"})
      */
     private $Evenement;
 
