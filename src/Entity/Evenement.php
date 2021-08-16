@@ -64,12 +64,12 @@ class Evenement
         return $this;
     }
 
-    public function getEtat(): ?int
+    public function getEtat(): ?string
     {
         return $this->etat;
     }
 
-    public function setEtat(int $etat): self
+    public function setEtat(string $etat): self
     {
         $this->etat = $etat;
 
