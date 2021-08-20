@@ -11,9 +11,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=PermanenceRepository::class)
  * @ApiResource(
- * normalizationContext={"groups"={"read:permanence","read:evenement","read:type"}},
- * collectionOperations={"get"},
- * itemOperations={"get"})
+ * normalizationContext={"groups"={"read:permanence","read:evenement","read:type"},"enable_max_depth"=true})
  */
 class Permanence
 {

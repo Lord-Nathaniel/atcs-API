@@ -33,6 +33,7 @@ security:
 
     access_control:
         - { path: ^/api/permanences, roles: PUBLIC_ACCESS } #Allow non-authenticated users to access the full "permanences" data
+        - { path: ^/api, roles: PUBLIC_ACCESS } #Allow non-authenticated users to access the full "permanences" data
         - { path: ^/docs, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/authentication_token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY }

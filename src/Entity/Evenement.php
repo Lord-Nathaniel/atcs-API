@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=EvenementRepository::class)
  * @ApiResource(
- * normalizationContext={"groups"={"read:evenement"}})
+ * normalizationContext={"groups"={"read:evenement"},"enable_max_depth"=true})
  */
 class Evenement
 {
@@ -39,6 +39,7 @@ class Evenement
 
     /**
      * @ORM\OneToMany(targetEntity=Permanence::class, mappedBy="Evenement")
+     * @Groups({"read:evenement"})
      */
     private $Permanences;
 
